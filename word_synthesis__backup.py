@@ -9,6 +9,7 @@ import random
 import time
 import functools as ft
 import cv2
+import pandas as pd
 
 from text import ascii_alphanumeric, ascii_characters, ascii_digits, ascii_symbols, ascii_alphabet, random_font, max_char_size, random_string
 
@@ -402,35 +403,52 @@ if __name__ == '__main__':
         string, # random string
         max_rotation_angle=5) # maximum rotation angle (a random one will be computed)
 
-    def show_sample():
-        feature_dict = random_ocr_datapoint__word()
+    def show_sample(n):
+        angles = []
+        strings = []
+        for i in range(n):
+            feature_dict = random_ocr_datapoint__word()
 
-        image = feature_dict['image']
-        autoencoder_target_image = feature_dict['autoencoder_target_image']
-        bounding_boxes = feature_dict['bounding_boxes']
-        angle = feature_dict['angle']
-        string = feature_dict['string']
+            image = feature_dict['image']
+            image.save("demo_sample_data/sample__{}.png".format(i))
+            image.show()
+            autoencoder_target_image = feature_dict['autoencoder_target_image']
+            bounding_boxes = feature_dict['bounding_boxes']
+            angle = feature_dict['angle']
+            string = feature_dict['string']
 
-        # show bounding boxes in green:
-        image_draw = ImageDraw.Draw(image)
-        for bbox in bounding_boxes:
-            image_draw.rectangle(
-                bbox, fill=None, outline=(100, 0, 0)
-            )
+            # show bounding boxes in green:
+            image_draw = ImageDraw.Draw(image)
+            for bbox in bounding_boxes:
+                image_draw.rectangle(
+                    bbox, fill=None, outline=(100, 0, 0)
+                )
 
-        # show bounding boxes in green:
-        autoencoder_target_image_draw = ImageDraw.Draw(autoencoder_target_image)
-        for bbox in bounding_boxes:
-            autoencoder_target_image_draw.rectangle(
-                bbox, fill=None, outline=(100)
-            )
+            # show bounding boxes in green:
+            autoencoder_target_image_draw = ImageDraw.Draw(autoencoder_target_image)
+            for bbox in bounding_boxes:
+                autoencoder_target_image_draw.rectangle(
+                    bbox, fill=None, outline=(100)
+                )
 
-        image.show()
-        image.save("sample.png")
-        autoencoder_target_image.show()
-        autoencoder_target_image.save("autoencoder_target.png")
+            image.show()
+            image.save("demo_sample_data/sample_w_bounding_boxes__{}.png".format(i))
+            autoencoder_target_image.show()
+            autoencoder_target_image.save("demo_sample_data/autoencoder_target__{}.png".format(i))
+
+            print('------------------------')
+            print('angle: ', angle)
+            print('string: ', string)
+            print('------------------------')
+
+            angles.append(angle)
+            strings.append(string)
             
-        print('angle: ', angle)
-        print('string: ', string)
+        df = pd.DataFrame({
+            'string': strings,
+            'angle': angles
+        })
+        df.to_csv('demo_sample_data/strings_and_angles__{}.csv'.format(i), index=False)
 
-    show_sample()
+        
+    show_sample(6)

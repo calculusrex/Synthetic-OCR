@@ -392,6 +392,7 @@ def random_ocr_datapoint__word____tensors():
 
 
 if __name__ == '__main__':
+    print('Angle, letter_position, autoencoder_target_images')
     print("## WORD SYNTHESIS")
 
     string = random_string(ascii_alphanumeric, np.random.randint(8, 16))

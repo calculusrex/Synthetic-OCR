@@ -31,15 +31,14 @@ The implementation of neural network training on a procedural, _infinite_ datase
 ![generated_sample](https://github.com/zorila-m/Synthetic-OCR/blob/master/demo_sample_data/sample_w_bounding_boxes__5.png)
 ![generated_sample](https://github.com/zorila-m/Synthetic-OCR/blob/master/demo_sample_data/autoencoder_target__5.png)
 
-
-| string                                                | angle               | 
-|-------------------------------------------------------|---------------------| 
-| dxdRQdAmEM                                            | -4.960300275916547  | 
-| Ekz1WtBZk6l2CYFjyOpWKbPH2gnMrvhSy1h0ZnIxFzkPHgQ       | 2.0163108794355313  | 
-| nTvN42tLe8OAxJCKEnD                                   | -1.7480042394366724 | 
-| Kowm3Tn14NnZ12NrF27IbNuXeE1b9gQTnaPeRnqb2jQYzB95bHxyY | -3.6425219243148566 | 
-| J3xeSe                                                | -1.585695137516665  | 
-| R4eAVLYmdm5ocOVQonDRe8y4brB1TW2oCvS7rb4QsVwreIINu     | 3.2558213247236143  | 
+| string                                   | angle               | 
+|------------------------------------------|---------------------| 
+| kNUTc6L8gXz8WLUlOwRfZ3VM9W7ML9OoyIbguQii | -4.386958519064766  | 
+| NcQPFU43liEkXUc1CFsITn92juwmKGCvwm9j2mZU | 3.4434111556983455  | 
+| 7oP5sfI1xaMfhGRIns2PUvDl27ke             | -2.6967957120663493 | 
+| dr2wLusfkPzjrx8JtiHSrMU2WfWkvxSml8g0W    | 4.161772198547059   | 
+| U4W4L                                    | -3.375280375121488  | 
+| 1ycEi3bJELqRSrH                          | 1.3482718196439691  | 
 
 
 #### Recorded Target Data

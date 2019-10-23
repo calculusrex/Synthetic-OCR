@@ -448,7 +448,7 @@ if __name__ == '__main__':
             'string': strings,
             'angle': angles
         })
-        df.to_csv('demo_sample_data/strings_and_angles__{}.csv'.format(i), index=False)
+        df.to_csv('demo_sample_data/strings_and_angles.csv', index=False)
 
         
     show_sample(6)

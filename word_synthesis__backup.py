@@ -426,7 +426,9 @@ if __name__ == '__main__':
             )
 
         image.show()
+        image.save("sample.png")
         autoencoder_target_image.show()
+        autoencoder_target_image.save("autoencoder_target.png")
             
         print('angle: ', angle)
         print('string: ', string)

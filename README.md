@@ -1,4 +1,4 @@
-# **Optical character** recognition **non-sequential Keras** neural network training on **live** data
+# **Optical character** recognition **non-sequential Keras** neural network training on **on-the-fly generated syntetic data**
 
 ### _Zorilă Mircea_ | _Calculus Rex_ | _Arată Blană_
 
